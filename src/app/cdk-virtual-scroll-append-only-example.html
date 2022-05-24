@@ -1,0 +1,20 @@
+<div class="flex space-x">
+  <div>
+    <cdk-virtual-scroll-viewport
+      itemSize="50"
+      class="example-viewport"
+      #virtualScroller
+    >
+      <div cdkDropList (cdkDropListDropped)="drop($event)">
+        <div *cdkVirtualFor="let item of items" class="example-item" cdkDrag>
+          {{item}}
+        </div>
+      </div>
+    </cdk-virtual-scroll-viewport>
+
+    <pre>{{  items | json }}</pre>
+  </div>
+  <div>
+    <pre>  {{log|json}}</pre>
+  </div>
+</div>
